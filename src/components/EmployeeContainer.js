@@ -20,8 +20,10 @@ export class EmployeeContainer extends Component {
         }
         ).catch(err => console.log(err))
     }
-    searchEmployee = () => {
-
+    searchEmployee = (event) => {
+        this.setState({
+            search: event.target.value
+        })
     }
     render() {
         return (
