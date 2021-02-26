@@ -1,10 +1,10 @@
 import React from 'react'
-import UsersContainer from './components/UsersContainer'
+import EmployeeContainer from './components/EmployeeContainer'
 
 export default function App() {
   return (
     <div>
-      <UsersContainer />
+      <EmployeeContainer />
     </div>
   )
 }

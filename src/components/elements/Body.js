@@ -1,14 +1,14 @@
 import React from 'react'
 
-export default function Body() {
+export default function Body({ users }) {
     return (
         <div className='container'>
             <ul className="list-group">
-                <li className="list-group-item">An item</li>
-                <li className="list-group-item">A second item</li>
-                <li className="list-group-item">A third item</li>
-                <li className="list-group-item">A fourth item</li>
-                <li className="list-group-item">And a fifth one</li>
+                {users.map(user => (
+                    <li key={user.email} className='list-group-item'>
+                        {user.name.title} {user.name.first} {user.name.last} {user.email}
+                    </li>
+                ))}
             </ul>
         </div>
     )

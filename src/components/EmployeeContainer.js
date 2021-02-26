@@ -3,15 +3,25 @@ import API from '../utils/API'
 import Body from './elements/Body'
 import Header from './elements/Header'
 
-export class UsersContainer extends Component {
+export class EmployeeContainer extends Component {
     state = {
+        search: '',
         users: []
     }
     componentDidMount() {
-        API().then(res =>
+        this.employees()
+    }
+    employees = () => {
+        API().then(res => {
+            console.log(res.data.results)
             this.setState({
-                users: res.results
-            })).catch(err => console.log(err))
+                users: res.data.results
+            })
+        }
+        ).catch(err => console.log(err))
+    }
+    searchEmployee = () => {
+
     }
     render() {
         return (
@@ -23,4 +33,4 @@ export class UsersContainer extends Component {
     }
 }
 
-export default UsersContainer
+export default EmployeeContainer
