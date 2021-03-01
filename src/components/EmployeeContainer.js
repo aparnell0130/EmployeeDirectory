@@ -29,7 +29,7 @@ export class EmployeeContainer extends Component {
         return (
             <div>
                 <Header />
-                <Body users={this.state.users} />
+                <Body users={this.state.users} searchHandler={this.searchEmployee} search={this.state.search} />
             </div>
         )
     }
