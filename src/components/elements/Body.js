@@ -1,12 +1,14 @@
 import React from 'react'
 
 export default function Body({ users, searchHandler, search }) {
-    // const searchCase = search.toUpperCase()
+
     return (
         <div className='container'>
             <div className="form-group">
                 <label for="employee">{search}</label>
                 <input type="text" className="form-control" id="employee" placeholder="Start searching employee name" onChange={searchHandler} />
+                <button className='btn btn-success'><i className="fas fa-arrow-circle-up"></i></button>
+                <button className='btn btn-success'><i className="fas fa-arrow-circle-down"></i></button>
             </div>
             <ul className="list-group">
                 {
