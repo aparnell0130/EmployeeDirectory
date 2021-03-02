@@ -5,10 +5,8 @@ export default function Body({ users, searchHandler, search }) {
     return (
         <div className='container'>
             <div className="form-group">
-                <label for="employee">{search}</label>
+                <label htmlFor="employee">{search}</label>
                 <input type="text" className="form-control" id="employee" placeholder="Start searching employee name" onChange={searchHandler} />
-                <button className='btn btn-success'><i className="fas fa-arrow-circle-up"></i></button>
-                <button className='btn btn-success'><i className="fas fa-arrow-circle-down"></i></button>
             </div>
             <ul className="list-group">
                 {
@@ -18,12 +16,22 @@ export default function Body({ users, searchHandler, search }) {
                             .includes(search.toUpperCase())
                     )
                         .map(user => (
-                            <li key={user.email} className='list-group-item'>
-                                {user.name.title} {user.name.first} {user.name.last} {user.email}
-                            </li>)
+                            <div key={user.login.uuid}>
+                                <li className='list-group-item rounded mb-1' style={{
+                                    background: '#22577a',
+                                    color: '#57cc99'
+                                }}>
+                                    <span className='font-weight-bold' style={{ color: '#38a3a5' }}>Employee Name: </span>  {user.name.title} {user.name.first} {user.name.last}
+                                    <br />
+                                    <span className='font-weight-bold' style={{ color: '#38a3a5' }}>Employee Email: </span>  {user.email}
+                                    <br />
+                                    <img className='rounded' src={user.picture.large} alt="employee pic" />
+                                </li>
+                            </div>)
+
                         )
                 }
             </ul>
-        </div>
+        </div >
     )
 }
