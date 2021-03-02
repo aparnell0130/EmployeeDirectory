@@ -4,8 +4,8 @@ export default function Body({ users, searchHandler, search }) {
 
     return (
         <div className='container'>
-            <div className="form-group">
-                <label htmlFor="employee">{search}</label>
+            <div className="form-group rounded p-3" style={{ background: '#22577a' }}>
+                <label htmlFor="employee" style={{ color: '#80ed99' }}>{search}</label>
                 <input type="text" className="form-control" id="employee" placeholder="Start searching employee name" onChange={searchHandler} />
             </div>
             <ul className="list-group">
