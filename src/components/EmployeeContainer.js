@@ -6,7 +6,7 @@ import Header from './elements/Header'
 export class EmployeeContainer extends Component {
     state = {
         search: '',
-        users: []
+        employees: []
     }
     componentDidMount() {
         this.employees()
@@ -15,7 +15,7 @@ export class EmployeeContainer extends Component {
         API().then(res => {
             console.log(res.data.results)
             this.setState({
-                users: res.data.results
+                employees: res.data.results
             })
         }
         ).catch(err => console.log(err))
@@ -29,7 +29,7 @@ export class EmployeeContainer extends Component {
         return (
             <div>
                 <Header />
-                <Body users={this.state.users} searchHandler={this.searchEmployee} search={this.state.search} />
+                <Body employees={this.state.employees} searchHandler={this.searchEmployee} search={this.state.search} />
             </div>
         )
     }
