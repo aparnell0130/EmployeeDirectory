@@ -7,8 +7,8 @@ export default function Body({ employees, searchHandler, search, sort, sortDesc 
             <div className="form-group rounded p-3" style={{ background: '#22577a' }}>
                 <label htmlFor="employee" style={{ color: '#80ed99' }}>{search}</label>
                 <input type="text" className="form-control" id="employee" placeholder="Search employee by name" onChange={searchHandler} />
-                <button className='btn btn-success round m-2' onClick={sort}><i className="fas fa-arrow-circle-up"> Sort Asc</i></button>
-                <button className='btn btn-success round m-2' onClick={sortDesc}><i className="fas fa-arrow-circle-down"> Sort Desc</i></button>
+                <button className='btn m-2' style={{ background: '#38a3a5', color: '#c7f9cc' }} onClick={sort}><i className="fas fa-arrow-circle-up"> Sort Asc</i></button>
+                <button className='btn m-2' style={{ background: '#38a3a5', color: '#c7f9cc' }} onClick={sortDesc}><i className="fas fa-arrow-circle-down"> Sort Desc</i></button>
             </div>
             <ul className="list-group">
                 {
