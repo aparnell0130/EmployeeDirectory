@@ -35,11 +35,22 @@ export class EmployeeContainer extends Component {
         })
         console.log(this.state.employees)
     }
+    sortEmployeeDesc = (event) => {
+        event.preventDefault()
+        console.log('this button has been clicked')
+        const sortedEmp = this.state.employees.sort((a, b) => a.name.first < b.name.first ? 1 : -1)
+        console.log(sortedEmp)
+        this.setState({
+            employees: sortedEmp
+
+        })
+        console.log(this.state.employees)
+    }
     render() {
         return (
             <div>
                 <Header />
-                <Body employees={this.state.employees} searchHandler={this.searchEmployee} sort={this.sortEmployee} search={this.state.search} />
+                <Body employees={this.state.employees} searchHandler={this.searchEmployee} sort={this.sortEmployee} sortDesc={this.sortEmployeeDesc} search={this.state.search} />
             </div>
         )
     }
