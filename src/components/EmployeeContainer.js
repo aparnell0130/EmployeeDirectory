@@ -26,7 +26,6 @@ export class EmployeeContainer extends Component {
     }
     sortEmployee = (event) => {
         event.preventDefault()
-        console.log('this button has been clicked')
         const sortedEmp = this.state.employees.sort((a, b) => a.name.first > b.name.first ? 1 : -1)
         console.log(sortedEmp)
         this.setState({
@@ -37,14 +36,11 @@ export class EmployeeContainer extends Component {
     }
     sortEmployeeDesc = (event) => {
         event.preventDefault()
-        console.log('this button has been clicked')
         const sortedEmp = this.state.employees.sort((a, b) => a.name.first < b.name.first ? 1 : -1)
-        console.log(sortedEmp)
         this.setState({
             employees: sortedEmp
 
         })
-        console.log(this.state.employees)
     }
     render() {
         return (
