@@ -1,12 +1,13 @@
 import React from 'react'
 
-export default function Body({ employees, searchHandler, search }) {
+export default function Body({ employees, searchHandler, search, sort }) {
 
     return (
         <div className='container'>
             <div className="form-group rounded p-3" style={{ background: '#22577a' }}>
                 <label htmlFor="employee" style={{ color: '#80ed99' }}>{search}</label>
                 <input type="text" className="form-control" id="employee" placeholder="Search employee by name" onChange={searchHandler} />
+                <button onClick={sort}></button>
             </div>
             <ul className="list-group">
                 {

@@ -13,7 +13,6 @@ export class EmployeeContainer extends Component {
     }
     employees = () => {
         API().then(res => {
-            console.log(res.data.results)
             this.setState({
                 employees: res.data.results
             })
@@ -25,11 +24,22 @@ export class EmployeeContainer extends Component {
             search: event.target.value
         })
     }
+    sortEmployee = (event) => {
+        event.preventDefault()
+        console.log('this button has been clicked')
+        const sortedEmp = this.state.employees.sort((a, b) => a.name.first > b.name.first ? 1 : -1)
+        console.log(sortedEmp)
+        this.setState({
+            employees: sortedEmp
+
+        })
+        console.log(this.state.employees)
+    }
     render() {
         return (
             <div>
                 <Header />
-                <Body employees={this.state.employees} searchHandler={this.searchEmployee} search={this.state.search} />
+                <Body employees={this.state.employees} searchHandler={this.searchEmployee} sort={this.sortEmployee} search={this.state.search} />
             </div>
         )
     }
